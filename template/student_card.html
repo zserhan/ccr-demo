@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Card</title>
+  <style>
+    .error { color: red; }
+    .success { color: green; }
+    .badge { background: #ffcc00; color: #ffffff; font-size: 10px; }
+    img.avatar { width: 80px; height: 80px; }
+  </style>
+</head>
+<body>
+  <div class="student-card">
+    <img class="avatar" src="/avatars/default.png" />
+    <h2>{{ student.first_name }} {{ student.last_name }}</h2>
+
+    <p>Status:
+      <span class="{{ 'success' if student.enrolled else 'error' }}">
+        {{ 'Active' if student.enrolled else 'Inactive' }}
+      </span>
+    </p>
+
+    <div onclick="showDetails({{ student.id }})">View details</div>
+
+    <form>
+      <label>Search courses</label>
+      <input type="text" />
+      <div>Enter course name above</div>
+    </form>
+
+    <span class="badge">NEW</span>
+  </div>
+
+  <script>
+    function showDetails(id) {
+      // fetch and show
+    }
+  </script>
+</body>
+</html>
